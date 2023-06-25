@@ -6,6 +6,14 @@
   align-items: center;
   margin: 55px $padding-lr;
   color: $font-color-primary;
+  position: relative;
+  gap: 44px;
+
+  @include tablet-only {
+    margin: 38px 1.5rem;
+    margin-bottom: 0;
+    justify-content: space-between;
+  }
 
   &__logo {
     // height: calc((24 / 1440) * 100vw);
@@ -25,6 +33,7 @@
       //   width: calc((121 / 1440) * 100vw);
       width: 121px;
       height: 33px;
+
       //   aspect-ratio: 24 / 120;
     }
   }
@@ -36,10 +45,36 @@
     align-items: center;
     font-size: 13px;
 
+    @include tablet-only {
+      display: none;
+      position: absolute;
+      width: calc(100% - 1.5rem * 2);
+      top: 50px;
+      flex-direction: column;
+      background-color: $bg-primary;
+      color: #fff;
+      align-items: center;
+      border-radius: 10px;
+      padding: 2.5rem 1.5rem;
+
+      &.open {
+        display: block;
+        z-index: 999;
+      }
+    }
+
     &__menu {
       display: flex;
       list-style-type: none;
       gap: 2rem;
+      padding: 0;
+
+      @include tablet-only {
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        padding-bottom: 2rem;
+      }
 
       &__item {
         &:hover {
@@ -54,6 +89,16 @@
       list-style-type: none;
       gap: 1rem;
       font-size: 13px;
+      padding: 0;
+
+      @include tablet-only {
+        padding-top: 2rem;
+        margin: 0;
+        flex-direction: column;
+        align-items: center;
+        border-top: $font-color-primary 1px solid;
+        width: 100%;
+      }
     }
   }
 }
