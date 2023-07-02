@@ -62,10 +62,6 @@
     justify-content: flex-start;
 
     gap: 1.5rem;
-    p:first-child() {
-      border-bottom: 1px solid red;
-      margin-left: auto;
-    }
 
     .btn {
       width: 100%;
