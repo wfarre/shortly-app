@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
+
+import "./assets/Footer.scss";
 
 import { ReactComponent as Fb } from "./assets/images/icon-facebook.svg";
 import { ReactComponent as Ig } from "./assets/images/icon-instagram.svg";
@@ -6,9 +8,9 @@ import { ReactComponent as Twitter } from "./assets/images/icon-twitter.svg";
 import { ReactComponent as Pinterest } from "./assets/images/icon-pinterest.svg";
 import { ReactComponent as Logo } from "./assets/images/logo.svg";
 
-const Footer = () => {
-  const [isHovered, setIsHovered] = useState(false);
+import SnsLink from "./SnsLink";
 
+const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer__header">
@@ -66,30 +68,10 @@ const Footer = () => {
       </div>
       <div className="footer__footer">
         <ul className="sns">
-          <li className="links__list__item">
-            <a href="#">
-              <Fb />
-            </a>
-          </li>
-          <li className="links__list__item">
-            <a href="#">
-              <Ig />
-            </a>
-          </li>
-          <li className="links__list__item">
-            <a href="#">
-              <Twitter />
-            </a>
-          </li>
-          <li className="links__list__item">
-            <a href="#">
-              <Pinterest
-                fill={isHovered ? "hsl(180, 66%, 49%)" : "#fff"}
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
-              />
-            </a>
-          </li>
+          <SnsLink Logo={Fb} />
+          <SnsLink Logo={Ig} />
+          <SnsLink Logo={Twitter} />
+          <SnsLink Logo={Pinterest} />
         </ul>
       </div>
     </footer>

@@ -1,0 +1,59 @@
+@use "../../../assets/sass/main.scss" as *;
+
+.shorting-form {
+  position: relative;
+  background-image: url("./bg-shorten-desktop.svg");
+  background-color: $bg-primary;
+  padding: 3rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+
+  @include tablet-only() {
+    flex-direction: column;
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+
+  .error-message {
+    display: none;
+  }
+
+  &.error {
+    .input {
+      position: relative;
+      border: 1px $error solid;
+      &::placeholder {
+        color: $error;
+      }
+    }
+    .error-message {
+      position: absolute;
+      display: block;
+      color: $error;
+      font-size: 11px;
+      font-style: italic;
+      top: calc(56px + 1.5rem + 30px);
+      left: 4rem;
+
+      @include tablet-only() {
+        left: 1.5rem;
+        top: calc(48px + 18px);
+        z-index: 999;
+      }
+    }
+  }
+
+  .input {
+    font-size: 13px;
+    width: calc(((770 / 1440) * 100vw) - 2 * 2rem);
+    height: calc(56px - 2rem);
+    padding: 1em 2rem;
+    border-radius: 10px;
+
+    @include tablet-only() {
+      width: auto;
+      height: calc(48px - 2rem);
+    }
+  }
+}

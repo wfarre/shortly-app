@@ -1,0 +1,78 @@
+@use "../../../assets/sass/main.scss" as *;
+
+.card-link {
+  margin-top: 20px;
+  display: flex;
+  background-color: #fff;
+  height: 70px;
+  border-radius: 10px;
+  justify-content: flex-end;
+  padding: 0 1.5rem;
+  align-items: center;
+  gap: 1.5rem;
+
+  p {
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .original {
+    margin-right: auto;
+    @include tablet-only() {
+      width: calc(100% - 2rem);
+      border-bottom: $section-bg-color 2px solid;
+      margin: 0;
+      padding: 0 1rem;
+      padding-bottom: 10px;
+    }
+  }
+
+  .shorten-link {
+    color: $btn-bg-primary;
+    margin: 0;
+    @include tablet-only() {
+      width: 100%;
+      width: calc(100% - 2rem);
+      padding: 0 1rem;
+    }
+  }
+
+  .btn {
+    border-radius: 10px;
+    width: 105px;
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &.copied {
+    .btn {
+      background-color: $bg-primary;
+    }
+  }
+
+  @include tablet-only() {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+    padding: 1rem 0;
+    text-align: left !important;
+    justify-content: flex-start;
+
+    gap: 1.5rem;
+    p:first-child() {
+      border-bottom: 1px solid red;
+      margin-left: auto;
+    }
+
+    .btn {
+      width: 100%;
+      border-radius: 10px;
+
+      width: calc(100% - 2rem);
+      margin: 0 1rem;
+    }
+  }
+}

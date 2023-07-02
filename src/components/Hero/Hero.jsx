@@ -1,4 +1,5 @@
 import React from "react";
+import "./assets/Hero.scss";
 
 const Hero = () => {
   return (

@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import CardLink from "./CardLink";
+import "./assets/Form.scss";
 
 const Form = () => {
   const [input, setInput] = useState("");

@@ -1,0 +1,45 @@
+@use "../../../assets/sass/main.scss" as *;
+
+.card {
+  z-index: 10;
+  position: relative;
+  width: calc(350px - 4rem);
+  height: calc(270px - 5.5rem);
+  background-color: #fff;
+  font-size: 13px;
+  padding: 5.5rem 2rem 0 2rem;
+  color: $font-color-primary;
+  font-family: "Poppins", sans-serif;
+
+  @include tablet-only() {
+    width: auto;
+    height: auto;
+    text-align: center;
+  }
+
+  &__image {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5.5rem;
+    height: 5.5rem;
+    background-color: $bg-primary;
+    border-radius: 100%;
+    top: calc(-5.5rem / 2);
+    left: 2rem;
+
+    @include tablet-only() {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__header {
+    &__title {
+      font-size: 18px;
+      font-weight: 700;
+      color: $title-color;
+    }
+  }
+}

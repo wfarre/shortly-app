@@ -1,10 +1,8 @@
 import React from "react";
+import "./assets/CardLink.scss";
 
 const CardLink = ({ orginalLink, shortenLink }) => {
   const handleCopy = (e) => {
-    console.log(
-      e.target.closest(".card-link").querySelector(".shorten-link").innerHTML
-    );
     const cardLink = e.target.closest(".card-link");
     const cardLinks = document.querySelectorAll(".card-link");
     cardLinks.forEach((card) => {
